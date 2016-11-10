@@ -1,0 +1,49 @@
+<!--Copyright (c) 2015-2016 University of Tampere-->
+<!--Speech-based and Pervasive Interaction Group-->
+<!--Tampere Unit for Human-Computer Interaction (TAUCHI)-->
+<!--School of Information Sciences-->
+
+<!DOCTYPE html>
+<html ng-app="CareerGameApp">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Career Game</title>
+
+    <meta name="viewport" content="initial-scale=1">
+
+    <!--<link href="assets/font_icons/flaticon.css" rel="stylesheet">-->
+    <link href="assets/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/bower_components/animate.css/animate.css" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <section class="container-fluid main-container">
+
+        <!--This section contains the current view, which is dynamically changed-->
+        <section class="main-view-panel page" ng-view></section>
+
+    </section>
+
+    <script src="assets/bower_components/jquery/dist/jquery.js"></script>
+    <script src="assets/bower_components/angular/angular.js"></script>
+    <script src="assets/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="assets/bower_components/angular-route/angular-route.js"></script>
+    <!--<script src="assets/bower_components/angular-touch/angular-touch.js"></script>-->
+
+    <script src="assets/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="assets/bower_components/underscore/underscore.js"></script>
+
+    <script src="app/app.js"></script>
+
+    <script src="app/components/chores/chores.ctrl.js"></script>
+
+    <!--<script src="app/shared/utility/filters.js"></script>-->
+
+</body>
+
+</html>

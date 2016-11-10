@@ -1,0 +1,14 @@
+<div clas="row chores-panel">
+
+    <div class="new-chore-section">
+        <input class="text" ng-model="newChore"/>
+        <button class="btn btn-success" ng-click="addNewChore()">Add new chore</button>
+    </div>
+
+    <ul class="chores-list">
+        <li ng-repeat="chore in choresList">
+            <span>{{chore}}</span>
+        </li>
+    </ul>
+
+</div>
