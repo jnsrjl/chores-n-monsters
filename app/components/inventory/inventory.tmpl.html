@@ -1,0 +1,21 @@
+<div clas="row inventory-panel" ng-controller="InventoryCtrl">
+
+    <h1 class="text-center">Your gear</h1>
+
+    <ul class="list-unstyled row inventory-list">
+        <li class= "col col-md-4 inventory-item" ng-repeat=" item in player.stats.items">
+            <div class="icon-circle">
+                <img ng-src="assets/img/career_items/{{player.stats.career}}/{{item.name}}.svg"/>
+            </div>
+            <div class="text-center inventory-item-info">
+                <div class="inventory-item-name">{{item.screenName}}</div>
+                <div>
+                    <img class="small-diamond-icon" src="assets/img/diamond.svg"/>
+                    {{item.price}}
+                </div>
+            </div>
+
+        </li>
+    </ul>
+
+</div>

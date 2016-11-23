@@ -1,0 +1,20 @@
+<div class="row shop-panel" ng-controller="ShopCtrl">
+
+    <h1 class="text-center">Shop</h1>
+
+    <ul class="list-unstyled row shop-list">
+        <li class= "col col-md-4 shop-item" ng-repeat=" item in shopList">
+            <div class="icon-circle" ng-class="{needed : isNeeded(item), purchased: isPurchased(item) }" ng-click="purchase(item)">
+                <img ng-src="assets/img/career_items/{{player.stats.career}}/{{item.name}}.svg"/>
+            </div>
+            <div class="text-center shop-item-info">
+                <div class="shop-item-name">{{item.screenName}}</div>
+                <div>{{item.price}}
+                    <img class="small-diamond-icon" src="assets/img/diamond.svg"/>
+                </div>
+            </div>
+
+        </li>
+    </ul>
+
+</div>

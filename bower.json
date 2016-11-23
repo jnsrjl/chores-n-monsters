@@ -20,6 +20,7 @@
     "angular-animate": "^1.5.8",
     "bootstrap": "^3.3.7",
     "animate.css": "^3.5.2",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "angular-bootstrap": "^2.2.0"
   }
 }

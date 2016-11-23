@@ -1,9 +1,97 @@
-<div class="row general-view">
-    <div class="center-block character-img"></div>
+<div class="row general-view" ng-if="isGenderSelected() && isCareerSelected()">
 
-    <div class="status-panel">
-        <div class="avatar">
-            <img />
+    <div class="col col-md-3 character-info">
+
+        <div class="character">
+            <img class="player-icon" src="assets/img/careers/{{player.stats.career}}_{{player.stats.gender}}.svg">
         </div>
+
+        <div class="row center-block status-bar">
+
+            <div class="col col-md-6 diamonds">
+                <div>{{player.stats.diamonds}}
+                    <img class="medium-diamond-icon" src="assets/img/diamond.svg"/>
+                </div>
+            </div>
+
+            <div class="col col-md-6 level">
+                <span>{{getLevel()}}</span>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="col col-md-7 view-content">
+        <div class="view" ng-include="getTemplate()"></div>
+    </div>
+
+    <div class="col col-md-2 menu">
+
+        <div class="menu-item chores">
+            <img class="chore-icon" src="assets/img/menu_items/clipboard.svg" ng-click="changeView('chores')"/>
+        </div>
+
+        <div class="menu-item inventory">
+            <img class="inventory-icon" src="assets/img/menu_items/backpack.svg" ng-click="changeView('inventory')"/>
+        </div>
+
+        <div class="menu-item shop">
+            <img class="shop-icon" src="assets/img/menu_items/store.svg" ng-click="changeView('shop')"/>
+        </div>
+
+        <div class="menu-item career-map">
+            <img class="career-map-icon" src="assets/img/menu_items/map.svg" ng-click="changeView('career-map')"/>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row genders-view" ng-if="!isGenderSelected()">
+
+    <!--<div class="row title-section center-block ">-->
+        <!--<h1 class="title">What do you want your character to be?</h1>-->
+    <!--</div>-->
+
+    <div class="row center-block genders-panel">
+
+        <div class="col col-md-3 button-column">
+            <div class="button" id="female-button" ng-click="selectGender('female')">Tyttö</div>
+        </div>
+
+        <div class="col col-md-6 genders">
+            <img class="genders-icon" src="assets/img/genders.svg">
+        </div>
+
+        <div class="col col-md-3 button-column">
+            <div class="button" id="male-button" ng-click="selectGender('male')">Poika</div>
+        </div>
+    </div>
+</div>
+
+<div class="row genders-view" ng-if="isGenderSelected() && !isCareerSelected()">
+
+    <!--<div class="row title-section">-->
+        <!--<h1 ng-class="title">What do you want to be?</h1>-->
+    <!--</div>-->
+
+    <div class="row center-block professions-panel">
+
+        <div class="col col-md-4">
+            <img class="genders-icon" src="assets/img/careers/chef_{{player.stats.gender}}.svg" ng-click="selectCareer('chef')">
+            <div class="career-title">Chef</div>
+        </div>
+
+        <div class="col col-md-4">
+            <img class="genders-icon" ng-src="assets/img/careers/doctor_{{player.stats.gender}}.svg" ng-click="selectCareer('doctor')">
+            <div class="career-title">Doctor</div>
+        </div>
+
+        <div class="col col-md-4">
+            <img class="genders-icon" src="assets/img/careers/fireman_{{player.stats.gender}}.svg" ng-click="selectCareer('fireman')">
+            <div class="career-title">Fireman</div>
+        </div>
+
     </div>
 </div>

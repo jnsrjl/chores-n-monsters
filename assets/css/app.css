@@ -1,5 +1,216 @@
-
+html, body, .main-container, .main-view-panel{
+    width: 100%;
+    height: 100%;
+}
 
 .general-view{
-    background-color: #01cd67;
+
+    height: 100%;
+    background-color: #5CC466;
+}
+
+.view{
+    height: 100%;
+}
+
+.character-info{
+
+    height: 100%;
+
+    /*background-color: purple;*/
+}
+
+.character{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-bar{
+    width: 80%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.25em;
+    color: white;
+
+    background-color: rgba(255, 255, 255, 0.125);
+}
+
+.menu{
+
+    height: 100%;
+    /*background-color: red;*/
+}
+
+.menu-item{
+
+    height: 25%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item img{
+    height: 125px;
+    height: 125px;
+}
+
+.view-content{
+
+    height: 100%;
+    /*background-color: blue;*/
+}
+
+.button{
+
+    width: 150px;
+    height: 75px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2.5%;
+    color: white;
+    background-color: darkturquoise;
+    font-size: 1.5em;
+
+    cursor: pointer;
+
+}
+
+.genders-view{
+
+    height: 100%;
+
+    background-color: purple;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.genders-icon{
+    width: 350px;
+    height: 350px;
+}
+
+.button-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    color: white;
+}
+
+.career-title{
+    color:white;
+    font-size: 1.5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 5%;
+}
+
+.player-icon{
+    height: 500px;
+}
+
+.small-diamond-icon{
+    height: 25px;
+    width: 25px;
+}
+
+.medium-diamond-icon {
+    height: 40px;
+    width: 40px;
+}
+
+.diamonds .medium-diamond-icon {
+    margin-left: 10px;
+}
+
+.chores-list{
+    width: 80%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.chore{
+    padding: 2.5%;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin-top: 2.5%;
+    font-size: 1.25em;
+    color: white;
+    cursor: pointer;
+}
+
+.chore-reward span, .chore-reward img{
+    float: right;
+}
+
+.chore-reward img {
+    float: right;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.icon-circle{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+
+    cursor: pointer;
+
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.shop-item, .inventory-item{
+    padding: 5%;
+}
+
+.shop-item-info, .inventory-item-info{
+
+    margin-top: 10%;
+
+    font-size: 1.25em;
+    color: white;
+
+}
+
+.shop-panel, .inventory-panel{
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-circle.purchased{
+    opacity: 0.25;
+    background-color: green;
+}
+
+.career-map-panel{
+    width: 100%;
+    height: 100%;
+}
+
+#map-canvas{
+    background-color: greenyellow;
 }

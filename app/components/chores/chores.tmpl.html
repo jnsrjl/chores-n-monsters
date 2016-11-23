@@ -1,13 +1,19 @@
-<div clas="row chores-panel">
+<div class="row chores-panel" ng-controller="ChoresCtrl">
 
     <div class="new-chore-section">
         <input class="text" ng-model="newChore"/>
         <button class="btn btn-success" ng-click="addNewChore()">Add new chore</button>
     </div>
 
-    <ul class="chores-list">
-        <li ng-repeat="chore in choresList">
-            <span>{{chore}}</span>
+    <h1 class="text-center">Chores</h1>
+
+    <ul class="list-unstyled center-block chores-list">
+        <li class="row chore" ng-repeat="chore in choresList">
+            <div class="col col-md-9 chore-name">{{chore.choreName}}</div>
+            <div class="col col-md-3 chore-reward">
+                <span>{{chore.reward}}</span>
+                <img class="small-diamond-icon" src="assets/img/diamond.svg"/>
+            </div>
         </li>
     </ul>
 
