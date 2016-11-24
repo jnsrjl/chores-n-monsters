@@ -1,8 +1,14 @@
 <div class="row chores-panel" ng-controller="ChoresCtrl">
 
     <div class="new-chore-section">
-        <input class="text" ng-model="newChore"/>
+        <input class="text" ng-model="choreName"/>
         <button class="btn btn-success" ng-click="addNewChore()">Add new chore</button>
+
+        <div class="btn-group">
+            <label class="btn btn-primary" ng-model="choreRewardLevel" uib-btn-radio="'low'">Low</label>
+            <label class="btn btn-primary" ng-model="choreRewardLevel" uib-btn-radio="'medium'">Medium</label>
+            <label class="btn btn-primary" ng-model="choreRewardLevel" uib-btn-radio="'high'">High</label>
+        </div>
     </div>
 
     <h1 class="text-center">Chores</h1>

@@ -1,0 +1,25 @@
+<div class="row monster-panel" ng-controller="MonsterCtrl">
+
+    <div class="monster" ng-hide="monsterDefeated">
+        <div class="speech-bubble-container">
+            <div class="talk-bubble tri-right left-in">
+                <div class="talktext">
+                    <p>{{monsterText}}</p>
+                </div>
+                <div class="icon-circle small-icon-circle">
+                    <img ng-src="assets/img/career_items/{{player.stats.career}}/{{monster.item}}.svg"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="talk-bubble tri-right left-in" ng-if="hasRequiredItems()">
+            <div class="talktext">
+                <p>Tap to defeat me!</p>
+            </div>
+        </div>
+
+        <img class="monster-img" ng-style="{width: monsterWidth + 'px', height: monsterHeight + 'px'}" ng-class="{'shake' : isHit, 'dead-monster' : hitsCount >= 3}" ng-src="assets/img/monsters/{{player.stats.career}}/{{player.stats.career}}_monster_{{player.stats.level}}.svg" ng-click="showItemText(); attackMonster();"/>
+
+    </div>
+
+</div>

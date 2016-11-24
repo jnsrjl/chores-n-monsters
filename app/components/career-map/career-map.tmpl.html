@@ -1,3 +1,15 @@
 <div class="row career-map-panel" ng-controller="CareerMapCtrl">
-    <canvas id="map-canvas" width = '700px' height = '700px'></canvas>
+
+    <div class="inner-map" ng-if="!monsterView">
+
+        <div class="level-circle" ng-repeat="level in levels" id="level{{level}}" ng-class="{'red-circle': isCurrentLevel(level)}" ng-click="showMonsterView()">
+            <span class="question-mark" ng-show="!isCurrentLevel(level)">?</span>
+        </div>
+
+        <!--<button ng-click="showMonsterView()">Let's fight</button>-->
+    </div>
+
+    <div class="monster-container" ng-include="'app/components/monster/monster.tmpl.html'" ng-if="monsterView"></div>
+    <!--<canvas id="map-canvas" width = '700px' height = '700px'></canvas>-->
 </div>
+

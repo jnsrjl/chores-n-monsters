@@ -8,7 +8,7 @@
 'use strict';
 
 //Angular application for a generic audio streaming app
-var app = angular.module('CareerGameApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
+var app = angular.module('CareerGameApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'angularModalService']);
 
 app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routeProvider) {
     
@@ -33,6 +33,12 @@ app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routePro
             templateUrl: 'app/components/chores/chores.tmpl.html' // Contains an html template file of the view about to be loaded
         })
 
+        //Monster View
+        .when('/monster', {
+            controller: 'MonsterCtrl', //The controller for the view
+            templateUrl: 'app/components/monster/monster.tmpl.html' // Contains an html template file of the view about to be loaded
+        })
+
         .when('/chores/:param', {
             controller: 'ChoresCtrl', //The controller for the view
             templateUrl: 'app/components/chores/chores.tmpl.html' // Contains an html template file of the view about to be loaded
@@ -48,6 +54,7 @@ app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routePro
 //Wrapping underscore library as constant. The underscore library provides useful, functional-programming-like and other utility functions
 app.constant('_', window._);
 
+//TODO change from camelCase
 app.constant('items_names', {
 
     doctor: [
@@ -56,7 +63,7 @@ app.constant('items_names', {
         {pot: 'Magic pot'},
         {knives: 'Awesome knive set'},
         {spices: 'Special spices'},
-        {utensils: 'Professional whisks'}
+        {whisk: 'Professional whisks'}
     ],
 
     chef: [
@@ -66,10 +73,17 @@ app.constant('items_names', {
         {medicine: 'Miracle medicines'},
         {microscope: 'Microscope'},
         {xray: 'Super X-ray machine'}
+    ],
+
+    fireman: [
+        {ambulance: 'Speedy ambulance'},
+        {everydayTools: 'Everyday tools'},
+        {heartTools: 'Heart tool set'},
+        {medicine: 'Miracle medicines'},
+        {microscope: 'Microscope'},
+        {xray: 'Super X-ray machine'}
     ]
-
-
-
+    
 });
 
 app.constant('items_prices', {
@@ -80,7 +94,7 @@ app.constant('items_prices', {
         {pot: 5},
         {knives: 8},
         {spices: 6},
-        {utensils: 10}
+        {whisk: 10}
     ],
 
     chef: [
@@ -101,10 +115,19 @@ app.constant('items', {
         {name: 'pot', screenName: 'Luxurious pot', price: 5},
         {name: 'knives', screenName: 'Awesome knive set', price: 8},
         {name: 'spices', screenName: 'Special spices', price: 6},
-        {name: 'utensils', screenName: 'Professional gear', price: 10}
+        {name: 'whisk', screenName: 'Professional gear', price: 10}
     ],
 
     doctor: [
+        {name: 'ambulance', screenName: 'Fast ambulance', price: 10},
+        {name: 'everydayTools', screenName: 'Doctor essentials', price: 3},
+        {name: 'heartTools', screenName: 'Heart tools', price: 8},
+        {name: 'medicine', screenName: 'Magic medicines', price: 4},
+        {name: 'microscope', screenName: 'Microscope', price: 8},
+        {name: 'xray', screenName: 'X-ray machine', price: 10}
+    ],
+
+    fireman: [
         {name: 'ambulance', screenName: 'Fast ambulance', price: 10},
         {name: 'everydayTools', screenName: 'Doctor essentials', price: 3},
         {name: 'heartTools', screenName: 'Heart tools', price: 8},
@@ -121,12 +144,44 @@ app.constant('careerLevels', {
     },
 
     doctor: {
-        1: 'Paramedic'
+        1: 'Medical Student',
+        2: 'Paramedic',
+        3: 'Nurse'
     },
 
     fireman : {
         1: 'Trainee'
     }
+});
+
+app.constant('monsters', {
+    chef: {
+        1: {
+            monsterName: 'Cake Monster',
+            introText: "I'm the Cake Moster!",
+            itemText: 'Ha! You need the whisk to beat me.',
+            item: 'whisk'
+        }
+    },
+
+    doctor: {
+        1: {
+            monsterName: 'Flu Monster',
+            introText: 'Coff coff I am the Flu Monster',
+            itemText: 'You must have the right medicines to fight me',
+            item: 'medicine'
+        },
+
+        2: {
+            monsterName: 'Flu Monster',
+            introText: 'Coff coff I am the Flu Monster',
+            itemText: 'You must have the right medicines to fight me',
+            item: 'medicine'
+        }
+
+    }
+    
+    
 });
 
 

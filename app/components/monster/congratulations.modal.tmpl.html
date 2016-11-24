@@ -1,0 +1,13 @@
+<div id="custom-modal">
+    <div id="overlay">
+        <h1 class="text-center">Congratulations!</h1>
+        <div class="text">
+            You have beaten the {{monster.monsterName}}
+        </div>
+        <div class="level-text">
+            You are now Level {{player.stats.level}} <span>{{careerLevels[player.stats.career][player.stats.level]}}</span>
+        </div>
+        <a href ng-click="close()">Close</a>
+    </div>
+    <div id="fade"></div>
+</div>

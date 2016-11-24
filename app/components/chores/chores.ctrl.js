@@ -10,11 +10,30 @@ app.controller('ChoresCtrl', function($scope) {
         {choreName: 'Clean the markers', reward: 5}, 
         {choreName: 'Doing the homework', reward: 5}
     ];
-    $scope.newChore = '';
+
+    $scope.choreName = '';
+    $scope.choreRewardLevel = 'medium';
 
     $scope.addNewChore = function(){
-        $scope.choresList.push($scope.newChore);
-        $scope.newChore = '';
+
+        var chore = {choreName: $scope.choreName, reward: calculateReward()}
+        $scope.choresList.push(chore);
+        $scope.choreName = '';
+        $scope.choreRewardLevel = 'medium';
+    }
+
+    function calculateReward(){
+
+        if($scope.choreRewardLevel == 'low'){
+            return 5;
+        }
+        else if ($scope.choreRewardLevel == 'medium'){
+            return 10;
+        }
+
+        else{
+            return 15;
+        }
     }
 
 });
